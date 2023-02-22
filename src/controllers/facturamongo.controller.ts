@@ -4,17 +4,23 @@ import {
   Filter,
   FilterExcludingWhere,
   repository,
-  Where
+  Where,
 } from '@loopback/repository';
 import {
-  del, get,
-  getModelSchemaRef, param, patch, post, put, requestBody,
-  response
+  post,
+  param,
+  get,
+  getModelSchemaRef,
+  patch,
+  put,
+  del,
+  requestBody,
+  response,
 } from '@loopback/rest';
 import {Factura} from '../models';
 import {FacturaRepository} from '../repositories';
 
-export class FacturasController {
+export class FacturamongoController {
   constructor(
     @repository(FacturaRepository)
     public facturaRepository : FacturaRepository,

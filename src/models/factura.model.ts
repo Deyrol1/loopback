@@ -1,12 +1,13 @@
-import { Entity, model, property } from '@loopback/repository';
+import {Entity, model, property} from '@loopback/repository';
 
 @model({settings: {strict: false}})
 export class Factura extends Entity {
   @property({
     type: 'string',
-    required: true,
+    id: true,
+    generated: true,
   })
-  id: string;
+  id?: string;
 
   @property({
     type: 'date',
@@ -15,10 +16,10 @@ export class Factura extends Entity {
   fecha: string;
 
   @property({
-    type: 'string',
+    type: 'object',
     required: true,
   })
-  articulos: string;
+  articulos: object;
 
   @property({
     type: 'number',
@@ -28,15 +29,13 @@ export class Factura extends Entity {
 
   @property({
     type: 'number',
-    required: true,
   })
-  iva: number;
+  iva?: number;
 
   @property({
     type: 'number',
-    required: true,
   })
-  descuento: number;
+  descuento?: number;
 
   @property({
     type: 'number',

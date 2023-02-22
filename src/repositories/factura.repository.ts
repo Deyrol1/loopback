@@ -1,6 +1,6 @@
 import {inject} from '@loopback/core';
 import {DefaultCrudRepository} from '@loopback/repository';
-import {FacturaMongoDataSource} from '../datasources';
+import {MongofacturaDataSource} from '../datasources';
 import {Factura, FacturaRelations} from '../models';
 
 export class FacturaRepository extends DefaultCrudRepository<
@@ -9,7 +9,7 @@ export class FacturaRepository extends DefaultCrudRepository<
   FacturaRelations
 > {
   constructor(
-    @inject('datasources.factura_mongo') dataSource: FacturaMongoDataSource,
+    @inject('datasources.mongofactura') dataSource: MongofacturaDataSource,
   ) {
     super(Factura, dataSource);
   }
