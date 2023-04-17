@@ -1,4 +1,5 @@
-import {Entity, model, property} from '@loopback/repository';
+import {Entity, model, property, belongsTo} from '@loopback/repository';
+import {Categoria} from './categoria.model';
 
 @model({settings: {strict: false}})
 export class Producto extends Entity {
@@ -16,9 +17,9 @@ export class Producto extends Entity {
   nombre: string;
 
   @property({
-    type: 'string',
+    type: 'number',
   })
-  detalle?: string;
+  cantidad?: number;
 
   @property({
     type: 'string',
@@ -26,6 +27,8 @@ export class Producto extends Entity {
   })
   precio: string;
 
+  @belongsTo(() => Categoria)
+  categoriaId: number;
   // Define well-known properties here
 
   // Indexer property to allow additional data
