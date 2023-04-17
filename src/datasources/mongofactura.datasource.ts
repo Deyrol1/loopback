@@ -4,13 +4,12 @@ import {juggler} from '@loopback/repository';
 const config = {
   name: 'mongofactura',
   connector: 'mongodb',
-  url: '',
+  url: 'mongodb://0.0.0.0:27017/facturas',
   host: 'localhost',
   port: 27017,
   user: '',
   password: '',
-  database: 'facturas',
-  useNewUrlParser: true
+  database: 'facturas'
 };
 
 // Observe application's life cycle to disconnect the datasource when
