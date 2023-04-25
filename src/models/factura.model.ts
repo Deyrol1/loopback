@@ -1,4 +1,5 @@
 import {Entity, model, property} from '@loopback/repository';
+import { Producto } from './producto.model';
 
 @model({settings: {strict: false}})
 export class Factura extends Entity {
@@ -16,10 +17,11 @@ export class Factura extends Entity {
   fecha: string;
 
   @property({
-    type: 'object',
+    type: 'array',
+    itemType: 'object',
     required: true,
   })
-  articulos: object;
+  articulos: Producto;
 
   @property({
     type: 'number',
