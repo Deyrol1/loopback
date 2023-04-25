@@ -21,7 +21,7 @@ export class Factura extends Entity {
     itemType: 'object',
     required: true,
   })
-  articulos: Producto;
+  articulos: Producto[];
 
   @property({
     type: 'number',
